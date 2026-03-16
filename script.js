@@ -35,6 +35,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+/* ── Active nav link on scroll ────────────────────── */
+
+const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+const sections = Array.from(navLinks).map(link =>
+  document.getElementById(link.dataset.section)
+).filter(Boolean);
+
+function updateActiveNav() {
+  const scrollY = window.scrollY + nav.offsetHeight + 40;
+  let current = sections[0];
+  for (const section of sections) {
+    if (section.offsetTop <= scrollY) current = section;
+  }
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.dataset.section === current?.id);
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
+
 /* ── Intersection Observer — reveal on scroll ─────── */
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -44,16 +65,42 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
-document.querySelectorAll(
-  '.stat-card, .deploy-card, .feature, .audience-item, ' +
-  '.mission-text, .pearl-info, .story-text, .contact-info, .contact-form, ' +
-  '.why-header, .comparison-table'
-).forEach(el => {
-  el.classList.add('reveal');
-  revealObserver.observe(el);
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ── Back to top ──────────────────────────────────── */
+
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+/* ── Cookie banner ────────────────────────────────── */
+
+(function initCookies() {
+  const banner = document.getElementById('cookieBanner');
+  const consent = localStorage.getItem('cookie-consent');
+
+  if (!consent) {
+    setTimeout(() => banner.classList.add('visible'), 1200);
+  }
+
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    banner.classList.remove('visible');
+  });
+
+  document.getElementById('cookieDecline').addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'declined');
+    banner.classList.remove('visible');
+  });
+})();
 
 /* ── Radar canvas animation ───────────────────────── */
 
@@ -91,7 +138,6 @@ document.querySelectorAll(
   function draw() {
     ctx.clearRect(0, 0, w, h);
 
-    // Grid rings
     ctx.strokeStyle = 'rgba(89,162,136,0.25)';
     ctx.lineWidth = 0.8;
     [0.25, 0.5, 0.75, 1].forEach(f => {
@@ -100,7 +146,6 @@ document.querySelectorAll(
       ctx.stroke();
     });
 
-    // Cross-hairs
     ctx.strokeStyle = 'rgba(89,162,136,0.15)';
     ctx.lineWidth = 0.6;
     [0, Math.PI / 2].forEach(a => {
@@ -109,11 +154,6 @@ document.querySelectorAll(
       ctx.lineTo(cx - Math.cos(a) * radius, cy - Math.sin(a) * radius);
       ctx.stroke();
     });
-
-    // Sweep gradient arc
-    const gradient = ctx.createConicalGradient
-      ? null // Not standard — use manual fan
-      : null;
 
     const TRAIL = Math.PI * 0.55;
     for (let i = 0; i < 60; i++) {
@@ -127,7 +167,6 @@ document.querySelectorAll(
       ctx.fill();
     }
 
-    // Sweep line
     ctx.beginPath();
     ctx.moveTo(cx, cy);
     ctx.lineTo(cx + Math.cos(angle) * radius, cy + Math.sin(angle) * radius);
@@ -135,14 +174,12 @@ document.querySelectorAll(
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
-    // Blips
     BLIPS.forEach((b, idx) => {
       ctx.beginPath();
       ctx.arc(b.x, b.y, b.size, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(89,162,136,${b.alpha})`;
       ctx.fill();
 
-      // Outer halo
       ctx.beginPath();
       ctx.arc(b.x, b.y, b.size + 4 * (1 - b.alpha), 0, Math.PI * 2);
       ctx.strokeStyle = `rgba(89,162,136,${b.alpha * 0.4})`;
