@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solacium Tech — Technology for Humanity's Hardest Moments</title>
+  <meta name="description" content="Solacium Tech builds life-saving hardware for the world's most vulnerable. PEARL is a passive drone detection system protecting civilians in conflict zones." />
+  <meta property="og:title" content="Solacium Tech — Technology for Humanity's Hardest Moments" />
+  <meta property="og:description" content="PEARL: Passive Early Alert Recon Listening device. Affordable drone detection for civilian protection." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/images/logo.svg" alt="Solacium Tech" class="nav-logo-img" />
+        <span class="nav-logo-text">SOLACIUM <span class="accent">TECH</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#pearl">PEARL</a></li>
+        <li><a href="#deployment">Deployment</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#mission">Mission</a>
+      <a href="#pearl">PEARL</a>
+      <a href="#deployment">Deployment</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas class="radar-canvas" id="radarCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">Live Pilot · Ukraine</div>
+      <h1 class="hero-headline">
+        Technology for<br />
+        <span class="hero-highlight">Humanity's Hardest</span><br />
+        Moments
+      </h1>
+      <p class="hero-sub">
+        We build life-saving hardware for the world's most vulnerable —
+        starting with passive drone detection that gives civilians the warning they deserve.
+      </p>
+      <div class="hero-actions">
+        <a href="#pearl" class="btn btn-primary">Discover PEARL</a>
+        <a href="#contact" class="btn btn-ghost">Partner With Us</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="mission" id="mission">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-text">
+          <span class="section-label">Our Mission</span>
+          <h2>No one should die<br />for lack of warning</h2>
+          <p>
+            In conflict zones around the world, civilians have seconds — sometimes none — to respond
+            to incoming drone threats. Existing detection technology costs tens or hundreds of thousands
+            of pounds. It was designed for militaries, not communities.
+          </p>
+          <p>
+            Solacium Tech exists to change that. We build affordable, deployable hardware that protects
+            the people who need it most: NGO workers, aid organisations, civilian populations, and
+            the institutions that serve them.
+          </p>
+        </div>
+        <div class="mission-stats">
+          <div class="stat-card">
+            <div class="stat-number">£90</div>
+            <div class="stat-label">Cost per unit to manufacture</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Live unit deployed in Ukraine</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Military applications — civilian-first, always</div>
+          </div>
+          <div class="stat-card stat-card--wide">
+            <div class="stat-number">Fraction</div>
+            <div class="stat-label">of the cost of any comparable solution on the market</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEARL Product -->
+  <section class="pearl" id="pearl">
+    <div class="container">
+      <div class="pearl-header">
+        <span class="section-label">Hero Product</span>
+        <h2>Meet <span class="accent">PEARL</span></h2>
+        <p class="pearl-subtitle">Passive Early Alert Recon Listening device</p>
+      </div>
+
+      <div class="pearl-showcase">
+        <div class="pearl-visual">
+          <div class="pearl-device">
+            <div class="pearl-ring pearl-ring--1"></div>
+            <div class="pearl-ring pearl-ring--2"></div>
+            <div class="pearl-ring pearl-ring--3"></div>
+            <div class="pearl-core">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="pearl-icon">
+                <circle cx="30" cy="30" r="28" stroke="#59a288" stroke-width="1.5" stroke-dasharray="4 2"/>
+                <path d="M20 30 Q25 20 30 30 Q35 40 40 30" stroke="#59a288" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M15 30 Q22 15 30 30 Q38 45 45 30" stroke="#536f68" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+                <circle cx="30" cy="30" r="3" fill="#59a288"/>
+                <circle cx="30" cy="30" r="1.5" fill="#cad0cb"/>
+              </svg>
+            </div>
+          </div>
+          <div class="pearl-label-tag">PEARL Unit</div>
+        </div>
+
+        <div class="pearl-info">
+          <p class="pearl-description">
+            PEARL is a passive acoustic and RF listening device that detects unmanned aerial
+            vehicles before they become a threat. It requires no active emissions — no radar
+            signature, no detectable output. It simply listens.
+          </p>
+          <p class="pearl-description">
+            When a drone is detected, PEARL issues an alert — giving civilians and aid workers
+            the critical seconds they need to take cover or evacuate.
+          </p>
+
+          <div class="pearl-features">
+            <div class="feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Passive Detection</h4>
+                <p>No RF emissions. No radar cross-section. Completely covert operation.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                  <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Building-Mounted</h4>
+                <p>Mounts to any building exterior. Minimal installation, maximum coverage.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Networked Nodes</h4>
+                <p>Deploy as standalone units or link into a wide-area detection network.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="1" y="3" width="15" height="13" rx="1"/>
+                  <path d="M16 8h4l3 3v5h-7V8z"/>
+                  <circle cx="5.5" cy="18.5" r="2.5"/>
+                  <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Vehicle Variant</h4>
+                <p>Mobile-mounted variant in development for convoy and field operations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment -->
+  <section class="deployment" id="deployment">
+    <div class="container">
+      <span class="section-label">Deployment</span>
+      <h2>Built for the field.<br />Ready for anywhere.</h2>
+
+      <div class="deployment-grid">
+        <div class="deploy-card">
+          <div class="deploy-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="20" width="32" height="24" rx="2" stroke="#59a288" stroke-width="1.5"/>
+              <path d="M16 20V14a8 8 0 1116 0v6" stroke="#59a288" stroke-width="1.5"/>
+              <circle cx="24" cy="32" r="3" fill="#59a288"/>
+            </svg>
+          </div>
+          <h3>Standalone Unit</h3>
+          <p>A single PEARL unit can protect a compound, field hospital, or aid distribution centre. Simple installation, immediate protection.</p>
+        </div>
+
+        <div class="deploy-card deploy-card--featured">
+          <div class="deploy-badge">Most Effective</div>
+          <div class="deploy-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="4" fill="#59a288"/>
+              <circle cx="10" cy="14" r="3" stroke="#59a288" stroke-width="1.5"/>
+              <circle cx="38" cy="14" r="3" stroke="#59a288" stroke-width="1.5"/>
+              <circle cx="10" cy="34" r="3" stroke="#59a288" stroke-width="1.5"/>
+              <circle cx="38" cy="34" r="3" stroke="#59a288" stroke-width="1.5"/>
+              <path d="M13 14h10M25 14h10M13 34h10M25 34h10M10 17v14M38 17v14" stroke="#536f68" stroke-width="1" stroke-dasharray="2 2"/>
+              <path d="M12 16l10 7M26 25l10 7M12 32l10-7M26 23l10-7" stroke="#536f68" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Networked System</h3>
+          <p>Multiple PEARL units linked together create overlapping detection zones, dramatically increasing warning time and coverage area across an entire district or city.</p>
+        </div>
+
+        <div class="deploy-card">
+          <div class="deploy-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="24" width="28" height="14" rx="2" stroke="#59a288" stroke-width="1.5"/>
+              <circle cx="14" cy="38" r="4" stroke="#59a288" stroke-width="1.5"/>
+              <circle cx="28" cy="38" r="4" stroke="#59a288" stroke-width="1.5"/>
+              <path d="M34 28h4l4 4v6h-8" stroke="#59a288" stroke-width="1.5"/>
+              <circle cx="38" cy="38" r="3" stroke="#59a288" stroke-width="1.5"/>
+              <path d="M20 24v-4M24 22l-4-2-4 2" stroke="#59a288" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Vehicle Variant</h3>
+          <p>In development: a ruggedised vehicle-mounted version for mobile operations, convoy protection, and rapid-deployment humanitarian response.</p>
+          <span class="deploy-status">In Development</span>
+        </div>
+      </div>
+
+      <div class="who-for">
+        <h3>Who PEARL is for</h3>
+        <div class="audience-grid">
+          <div class="audience-item">
+            <div class="audience-dot"></div>
+            <span>NGOs & International Charities</span>
+          </div>
+          <div class="audience-item">
+            <div class="audience-dot"></div>
+            <span>UN Agencies & WHO</span>
+          </div>
+          <div class="audience-item">
+            <div class="audience-dot"></div>
+            <span>Government Civil Defence Bodies</span>
+          </div>
+          <div class="audience-item">
+            <div class="audience-dot"></div>
+            <span>Humanitarian Aid Missions</span>
+          </div>
+          <div class="audience-item">
+            <div class="audience-dot"></div>
+            <span>Public Infrastructure Operators</span>
+          </div>
+          <div class="audience-item">
+            <div class="audience-dot"></div>
+            <span>International Development Organisations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-visual">
+          <div class="story-quote-mark">"</div>
+        </div>
+        <div class="story-text">
+          <span class="section-label">Our Story</span>
+          <h2>Born from the front line</h2>
+          <p>
+            Solacium Tech was founded on a simple, urgent observation: in active conflict zones,
+            air raid warnings come too late — or not at all.
+          </p>
+          <p>
+            Our founder has spent time in war zones, witnessing first-hand how the gap between
+            a drone's approach and a civilian's awareness is measured in seconds that people don't
+            have. The technology to close that gap exists. But at £50,000–£200,000 per system,
+            it was never built for the people who need it most.
+          </p>
+          <p>
+            PEARL changes that. With a unit cost of £90 to manufacture, we're proving that
+            life-saving detection technology can be accessible, deployable, and scalable — for
+            NGOs, for governments, for the communities the world has too often left behind.
+          </p>
+          <div class="story-pilot">
+            <div class="pilot-dot"></div>
+            <div>
+              <strong>Live Pilot — Ukraine</strong>
+              <p>One PEARL unit is currently deployed and operational, validating the technology in one of the world's most active drone threat environments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Solacium -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="why-header">
+        <span class="section-label">Why Solacium</span>
+        <h2>The case for PEARL</h2>
+      </div>
+      <div class="comparison-table">
+        <div class="comparison-row comparison-row--header">
+          <div>Capability</div>
+          <div class="col-them">Existing Market Solutions</div>
+          <div class="col-us">PEARL by Solacium Tech</div>
+        </div>
+        <div class="comparison-row">
+          <div>Unit Cost</div>
+          <div class="col-them neg">£50,000 – £200,000+</div>
+          <div class="col-us pos">£90 to manufacture</div>
+        </div>
+        <div class="comparison-row">
+          <div>Target User</div>
+          <div class="col-them neg">Military organisations</div>
+          <div class="col-us pos">Civilians & NGOs</div>
+        </div>
+        <div class="comparison-row">
+          <div>Passive Operation</div>
+          <div class="col-them neg">Rarely — most emit signals</div>
+          <div class="col-us pos">Yes — zero RF emissions</div>
+        </div>
+        <div class="comparison-row">
+          <div>Networked Deployment</div>
+          <div class="col-them mid">Complex, proprietary</div>
+          <div class="col-us pos">Simple node architecture</div>
+        </div>
+        <div class="comparison-row">
+          <div>Humanitarian Access</div>
+          <div class="col-them neg">Not designed for it</div>
+          <div class="col-us pos">Core mission</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-label">Get in Touch</span>
+          <h2>Let's protect more lives, together</h2>
+          <p>
+            Whether you represent an NGO, a government agency, an international body, or simply
+            want to learn more — we'd love to hear from you.
+          </p>
+          <p>
+            We're actively seeking deployment partners, pilot programme participants, and
+            organisations aligned with our mission.
+          </p>
+          <a href="mailto:hello@solacium.tech" class="contact-email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            hello@solacium.tech
+          </a>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="org">Organisation</label>
+            <input type="text" id="org" name="org" placeholder="Your organisation" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest">
+              <option value="">Select an option</option>
+              <option value="pilot">Running a pilot programme</option>
+              <option value="procurement">Procurement / bulk order</option>
+              <option value="partnership">Strategic partnership</option>
+              <option value="media">Press / media enquiry</option>
+              <option value="investor">Investment opportunity</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your situation and how we can help…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <p class="form-note">We respond to all enquiries within 48 hours.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.svg" alt="Solacium Tech" class="footer-logo-img" />
+            <span>SOLACIUM <span class="accent">TECH</span></span>
+          </div>
+          <p>Technology for Humanity's Hardest Moments</p>
+          <p class="footer-address">solacium.tech</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="#mission">Mission</a>
+          <a href="#pearl">PEARL</a>
+          <a href="#deployment">Deployment</a>
+          <a href="#story">Our Story</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-contact-info">
+          <h4>Contact</h4>
+          <a href="mailto:hello@solacium.tech">hello@solacium.tech</a>
+          <p class="footer-note">For press, partnerships, and procurement enquiries.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Solacium Tech Ltd. All rights reserved.</p>
+        <p class="footer-disclaimer">PEARL is a purely defensive, civilian-first technology. Not for military use.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
