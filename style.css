@@ -1280,6 +1280,211 @@ img {
   }
 }
 
+/* ── Network Map ──────────────────────────────────── */
+
+.network-map {
+  padding: var(--section-gap) 0 0;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+.network-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.network-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 12px;
+  line-height: 1.2;
+}
+
+.network-subtitle {
+  font-size: 0.975rem;
+  color: var(--teal);
+  max-width: 520px;
+  margin: 16px auto 0;
+  line-height: 1.7;
+}
+
+.network-viz-wrap {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.network-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Map base */
+.map-region {
+  fill: rgba(42, 54, 49, 0.35);
+  stroke: rgba(89, 162, 136, 0.12);
+  stroke-width: 1;
+}
+
+.map-grid {
+  stroke: rgba(89, 162, 136, 0.06);
+  stroke-width: 0.5;
+}
+
+/* Coverage zones */
+.coverage-zone {
+  fill: rgba(89, 162, 136, 0.055);
+  stroke: rgba(89, 162, 136, 0.15);
+  stroke-width: 0.5;
+  animation: coveragePulse 4s ease-in-out infinite;
+}
+
+@keyframes coveragePulse {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 0.4; }
+}
+
+/* Network lines */
+.net-line {
+  stroke: var(--green);
+  stroke-width: 0.8;
+  stroke-dasharray: 5 6;
+  stroke-linecap: round;
+  opacity: 0.5;
+  animation: flowLine 2.4s linear infinite;
+}
+
+.net-line--secondary {
+  stroke: var(--teal);
+  opacity: 0.25;
+  stroke-dasharray: 3 8;
+  animation-duration: 3.5s;
+}
+
+@keyframes flowLine {
+  from { stroke-dashoffset: 44; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* Nodes */
+.node-pulse {
+  fill: rgba(89, 162, 136, 0.12);
+  stroke: rgba(89, 162, 136, 0.2);
+  stroke-width: 0.5;
+  transform-origin: center;
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+.node-ring {
+  fill: rgba(89, 162, 136, 0.08);
+  stroke: var(--green);
+  stroke-width: 1;
+  animation: nodeRing 3s ease-in-out infinite;
+}
+
+.node-core {
+  fill: rgba(33, 33, 33, 0.9);
+  stroke: var(--green);
+  stroke-width: 1.5;
+}
+
+.node-dot {
+  fill: var(--green);
+}
+
+.pearl-node--centre .node-dot {
+  fill: var(--white);
+}
+
+.pearl-node--centre .node-core {
+  stroke-width: 2;
+}
+
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 0.15; transform: scale(1.5); }
+}
+
+@keyframes nodeRing {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 0.3; }
+}
+
+/* Node labels */
+.node-label {
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 600;
+  fill: var(--teal);
+  text-anchor: middle;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.node-label--centre {
+  fill: var(--green);
+  opacity: 0.9;
+}
+
+/* Network stats bar */
+.network-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: rgba(42, 54, 49, 0.4);
+  border: 1px solid rgba(89, 162, 136, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 28px 40px;
+  margin: 32px 0 var(--section-gap);
+  flex-wrap: wrap;
+}
+
+.nstat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 40px;
+}
+
+.nstat-num {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+}
+
+.nstat-label {
+  font-size: 0.75rem;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.nstat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(89, 162, 136, 0.15);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .network-stats {
+    gap: 20px;
+    padding: 24px 20px;
+  }
+  .nstat { padding: 0 12px; }
+  .nstat-divider { display: none; }
+  .nstat-num { font-size: 1.4rem; }
+}
+
 /* ── How It Works ─────────────────────────────────── */
 
 .how-it-works {

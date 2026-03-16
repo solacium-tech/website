@@ -289,6 +289,163 @@
     </div>
   </section>
 
+  <!-- Network Map -->
+  <section class="network-map" id="network-map">
+    <div class="container">
+      <div class="network-header reveal">
+        <span class="section-label">Coverage</span>
+        <h2>One unit protects a building.<br />A network protects a city.</h2>
+        <p class="network-subtitle">PEARL units link together automatically, creating overlapping detection zones that grow with every node added.</p>
+      </div>
+    </div>
+
+    <div class="network-viz-wrap">
+      <svg class="network-svg" viewBox="0 0 860 460" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+        <!-- Abstract region / landmass -->
+        <path class="map-region" d="M 60,210 C 55,135 90,68 175,48 C 260,28 365,38 460,58 C 555,78 650,95 715,158 C 780,221 778,318 730,375 C 682,432 590,450 475,445 C 360,440 255,428 168,396 C 81,364 65,285 60,210 Z"/>
+
+        <!-- Grid lines (subtle) -->
+        <line x1="60" y1="140" x2="800" y2="140" class="map-grid"/>
+        <line x1="60" y1="210" x2="800" y2="210" class="map-grid"/>
+        <line x1="60" y1="280" x2="800" y2="280" class="map-grid"/>
+        <line x1="60" y1="350" x2="800" y2="350" class="map-grid"/>
+        <line x1="180" y1="40" x2="180" y2="450" class="map-grid"/>
+        <line x1="310" y1="40" x2="310" y2="450" class="map-grid"/>
+        <line x1="440" y1="40" x2="440" y2="450" class="map-grid"/>
+        <line x1="570" y1="40" x2="570" y2="450" class="map-grid"/>
+        <line x1="700" y1="40" x2="700" y2="450" class="map-grid"/>
+
+        <!-- ── Coverage zones (overlapping = safety net) ── -->
+        <circle class="coverage-zone" cx="148" cy="158" r="105"/>
+        <circle class="coverage-zone" cx="308" cy="96"  r="105"/>
+        <circle class="coverage-zone" cx="484" cy="118" r="105"/>
+        <circle class="coverage-zone" cx="636" cy="188" r="105"/>
+        <circle class="coverage-zone" cx="205" cy="308" r="105"/>
+        <circle class="coverage-zone" cx="374" cy="258" r="105"/>
+        <circle class="coverage-zone" cx="530" cy="330" r="105"/>
+        <circle class="coverage-zone" cx="316" cy="392" r="105"/>
+
+        <!-- ── Network connection lines ── -->
+        <!-- A-B --> <line class="net-line" x1="148" y1="158" x2="308" y2="96"  style="animation-delay:0s"/>
+        <!-- B-C --> <line class="net-line" x1="308" y1="96"  x2="484" y2="118" style="animation-delay:0.3s"/>
+        <!-- C-D --> <line class="net-line" x1="484" y1="118" x2="636" y2="188" style="animation-delay:0.6s"/>
+        <!-- A-E --> <line class="net-line" x1="148" y1="158" x2="205" y2="308" style="animation-delay:0.2s"/>
+        <!-- B-F --> <line class="net-line" x1="308" y1="96"  x2="374" y2="258" style="animation-delay:0.5s"/>
+        <!-- C-F --> <line class="net-line" x1="484" y1="118" x2="374" y2="258" style="animation-delay:0.4s"/>
+        <!-- D-G --> <line class="net-line" x1="636" y1="188" x2="530" y2="330" style="animation-delay:0.8s"/>
+        <!-- E-F --> <line class="net-line" x1="205" y1="308" x2="374" y2="258" style="animation-delay:0.1s"/>
+        <!-- F-G --> <line class="net-line" x1="374" y1="258" x2="530" y2="330" style="animation-delay:0.7s"/>
+        <!-- E-H --> <line class="net-line" x1="205" y1="308" x2="316" y2="392" style="animation-delay:0.9s"/>
+        <!-- F-H --> <line class="net-line" x1="374" y1="258" x2="316" y2="392" style="animation-delay:0.3s"/>
+        <!-- G-H --> <line class="net-line" x1="530" y1="330" x2="316" y2="392" style="animation-delay:0.6s"/>
+        <!-- A-B diagonal --> <line class="net-line net-line--secondary" x1="148" y1="158" x2="374" y2="258" style="animation-delay:1.1s"/>
+        <!-- C-G --> <line class="net-line net-line--secondary" x1="484" y1="118" x2="530" y2="330" style="animation-delay:1.4s"/>
+
+        <!-- ── PEARL Nodes ── -->
+
+        <!-- Node A -->
+        <g class="pearl-node" style="animation-delay:0s">
+          <circle class="node-pulse" cx="148" cy="158" r="36" style="animation-delay:0s"/>
+          <circle class="node-ring"  cx="148" cy="158" r="18" style="animation-delay:0s"/>
+          <circle class="node-core"  cx="148" cy="158" r="7"/>
+          <circle class="node-dot"   cx="148" cy="158" r="3"/>
+        </g>
+
+        <!-- Node B -->
+        <g class="pearl-node" style="animation-delay:0.4s">
+          <circle class="node-pulse" cx="308" cy="96" r="36" style="animation-delay:0.4s"/>
+          <circle class="node-ring"  cx="308" cy="96" r="18" style="animation-delay:0.4s"/>
+          <circle class="node-core"  cx="308" cy="96" r="7"/>
+          <circle class="node-dot"   cx="308" cy="96" r="3"/>
+        </g>
+
+        <!-- Node C -->
+        <g class="pearl-node" style="animation-delay:0.8s">
+          <circle class="node-pulse" cx="484" cy="118" r="36" style="animation-delay:0.8s"/>
+          <circle class="node-ring"  cx="484" cy="118" r="18" style="animation-delay:0.8s"/>
+          <circle class="node-core"  cx="484" cy="118" r="7"/>
+          <circle class="node-dot"   cx="484" cy="118" r="3"/>
+        </g>
+
+        <!-- Node D -->
+        <g class="pearl-node" style="animation-delay:1.2s">
+          <circle class="node-pulse" cx="636" cy="188" r="36" style="animation-delay:1.2s"/>
+          <circle class="node-ring"  cx="636" cy="188" r="18" style="animation-delay:1.2s"/>
+          <circle class="node-core"  cx="636" cy="188" r="7"/>
+          <circle class="node-dot"   cx="636" cy="188" r="3"/>
+        </g>
+
+        <!-- Node E -->
+        <g class="pearl-node" style="animation-delay:0.6s">
+          <circle class="node-pulse" cx="205" cy="308" r="36" style="animation-delay:0.6s"/>
+          <circle class="node-ring"  cx="205" cy="308" r="18" style="animation-delay:0.6s"/>
+          <circle class="node-core"  cx="205" cy="308" r="7"/>
+          <circle class="node-dot"   cx="205" cy="308" r="3"/>
+        </g>
+
+        <!-- Node F (centre) -->
+        <g class="pearl-node pearl-node--centre" style="animation-delay:0.2s">
+          <circle class="node-pulse" cx="374" cy="258" r="42" style="animation-delay:0.2s"/>
+          <circle class="node-ring"  cx="374" cy="258" r="22" style="animation-delay:0.2s"/>
+          <circle class="node-core"  cx="374" cy="258" r="9"/>
+          <circle class="node-dot"   cx="374" cy="258" r="4"/>
+        </g>
+
+        <!-- Node G -->
+        <g class="pearl-node" style="animation-delay:1.0s">
+          <circle class="node-pulse" cx="530" cy="330" r="36" style="animation-delay:1.0s"/>
+          <circle class="node-ring"  cx="530" cy="330" r="18" style="animation-delay:1.0s"/>
+          <circle class="node-core"  cx="530" cy="330" r="7"/>
+          <circle class="node-dot"   cx="530" cy="330" r="3"/>
+        </g>
+
+        <!-- Node H -->
+        <g class="pearl-node" style="animation-delay:1.4s">
+          <circle class="node-pulse" cx="316" cy="392" r="36" style="animation-delay:1.4s"/>
+          <circle class="node-ring"  cx="316" cy="392" r="18" style="animation-delay:1.4s"/>
+          <circle class="node-core"  cx="316" cy="392" r="7"/>
+          <circle class="node-dot"   cx="316" cy="392" r="3"/>
+        </g>
+
+        <!-- Node labels -->
+        <text class="node-label" x="148" y="186">PEARL</text>
+        <text class="node-label" x="308" y="124">PEARL</text>
+        <text class="node-label" x="484" y="146">PEARL</text>
+        <text class="node-label" x="636" y="216">PEARL</text>
+        <text class="node-label" x="205" y="336">PEARL</text>
+        <text class="node-label node-label--centre" x="374" y="290">PEARL</text>
+        <text class="node-label" x="530" y="358">PEARL</text>
+        <text class="node-label" x="316" y="420">PEARL</text>
+
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="network-stats reveal">
+        <div class="nstat">
+          <span class="nstat-num">8</span>
+          <span class="nstat-label">Units shown</span>
+        </div>
+        <div class="nstat-divider"></div>
+        <div class="nstat">
+          <span class="nstat-num">14</span>
+          <span class="nstat-label">Active connections</span>
+        </div>
+        <div class="nstat-divider"></div>
+        <div class="nstat">
+          <span class="nstat-num">~£720</span>
+          <span class="nstat-label">Total hardware cost</span>
+        </div>
+        <div class="nstat-divider"></div>
+        <div class="nstat">
+          <span class="nstat-num">City-wide</span>
+          <span class="nstat-label">Detection coverage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Deployment -->
   <section class="deployment" id="deployment">
     <div class="container">
