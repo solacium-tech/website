@@ -1484,6 +1484,17 @@ img {
   margin-bottom: 16px;
 }
 
+.team-link {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+
+.team-link:hover {
+  opacity: 0.75;
+}
+
 .team-tags {
   display: flex;
   flex-wrap: wrap;
