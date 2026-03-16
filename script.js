@@ -174,32 +174,33 @@ document.querySelectorAll(
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
 
     const btn = contactForm.querySelector('button[type="submit"]');
-    const data = new FormData(contactForm);
-
-    // Build mailto link as a fallback (real implementation would use a backend / Formspree)
-    const name    = data.get('name') || '';
-    const org     = data.get('org') || '';
-    const email   = data.get('email') || '';
-    const interest = data.get('interest') || '';
-    const message = data.get('message') || '';
-
-    const subject = encodeURIComponent(`Website enquiry from ${name}${org ? ' — ' + org : ''}`);
-    const body    = encodeURIComponent(
-      `Name: ${name}\nOrganisation: ${org}\nEmail: ${email}\nInterest: ${interest}\n\n${message}`
-    );
-
-    btn.textContent = 'Opening your email client…';
+    btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    window.location.href = `mailto:hello@solacium.tech?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
 
-    setTimeout(() => {
-      btn.textContent = 'Message Sent — Thank You';
-      btn.style.background = '#536f68';
-    }, 1500);
+      if (response.ok) {
+        btn.textContent = 'Message Sent — Thank You';
+        btn.style.background = '#536f68';
+        contactForm.reset();
+      } else {
+        btn.textContent = 'Something went wrong — please email info@solacium.tech';
+        btn.style.background = '#7a4040';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong — please email info@solacium.tech';
+      btn.style.background = '#7a4040';
+      btn.disabled = false;
+    }
   });
 }
