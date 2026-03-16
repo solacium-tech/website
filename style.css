@@ -168,12 +168,12 @@ img {
 }
 
 .nav-logo-img {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   border-radius: 8px;
   background: #ffffff;
-  padding: 4px;
+  padding: 2px;
 }
 
 .nav-links {
@@ -1078,12 +1078,12 @@ img {
 }
 
 .footer-logo-img {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   border-radius: 6px;
   background: #ffffff;
-  padding: 3px;
+  padding: 2px;
 }
 
 .footer-links,
